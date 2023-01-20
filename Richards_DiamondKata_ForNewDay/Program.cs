@@ -4,20 +4,23 @@ using Richards_DiamondKata_ForNewDay.DTOs;
 
 Start:
 Console.WriteLine("Input letter then press Enter:");
-var letter = Console.ReadLine().ToUpper().ToCharArray();
-LetterDTO letterDto;
-try
-{ 
-    letterDto = new LetterDTO(letter[0]);
 
-    var diamondService = new DiamondKataService(new AlphabetService());
+Letter letterDto;
+try
+{
+    var letter = Console.ReadLine();
+       
+    letterDto = new Letter(letter);
+
+    var diamondService = new DiamondKataService();
 
     var diamond = diamondService.GetDiamond(letterDto);
     diamondService.PrintDiamond(diamond); 
 }
 catch (Exception ex)     
 {
-    Console.WriteLine(ex.Message);  
+    Console.WriteLine(ex.Message);
+    Console.WriteLine();
 }
 
 goto Start; 

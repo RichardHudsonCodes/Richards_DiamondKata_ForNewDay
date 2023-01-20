@@ -1,6 +1,9 @@
 using FluentAssertions;
 using Moq;
 using Richards_DiamondKata_ForNewDay;
+using Richards_DiamondKata_ForNewDay.DTOs;
+using Richards_DiamondKata_ForNewDay.ErrorMessages;
+using System.Diagnostics.Metrics;
 
 namespace DiamondKata.Test
 {
@@ -8,38 +11,18 @@ namespace DiamondKata.Test
     {
         private DiamondKataService _diamondKataService;         
         public DiamondKataServiceTests() 
-        {
-            var alphabetService = new AlphabetService(); 
-            _diamondKataService = new DiamondKataService(alphabetService);  
+        {            
+            _diamondKataService = new DiamondKataService();  
         } 
 
         [Fact]
-        public void GetDiamond_Positive_ReturnsCorrectNumberOfCharaterArrays()
+        public void GetDiamond_Positive_ReturnsArraysWithCorrectLengthAndWidth()
         {
-            var result = _diamondKataService.GetDiamond('B');
-            result.Count().Should().Be(3); 
+            var letter = new Letter("B");
+            var result = _diamondKataService.GetDiamond(letter);
+
+            result.GetLength(0).Should().Be(3);
+            result.GetLength(1).Should().Be(3);
         }
-
-        [Fact]
-        public void GetDiamond_Positive_ReturnsArraysWithCorrectLength()
-        {
-            var result = _diamondKataService.GetDiamond('B');
-
-            result.Count().Should().BeGreaterThan(0); 
-
-            foreach (var array in result) 
-            {
-                array.Length.Should().Be(3); 
-            }
-        }
-
-        [Fact]
-        public void GetDiamond_Negative_ThrowsExceptionIfSpecialCharacterIsInputted()
-        {
-            var result = _diamondKataService.GetDiamond('&');
-
-            result.Count().Should().BeGreaterThan(0);                        
-        }
-
     }
 }

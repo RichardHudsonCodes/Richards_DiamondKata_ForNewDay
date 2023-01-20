@@ -11,18 +11,15 @@ namespace Richards_DiamondKata_ForNewDay
 {
     internal class DiamondKataService : IDiamondKataService
     {
-        private AlphabetService _alphabetService;
+        private AlphabetService _alphabetService = new AlphabetService();
 
-        internal DiamondKataService(AlphabetService alphabetService) 
-        {
-            _alphabetService = alphabetService;
+        internal DiamondKataService() 
+        {            
         }
 
-        public char[,] GetDiamond(LetterDTO letterDto) 
+        public char[,] GetDiamond(Letter letterDto) 
         {
-            //ensure that special characters cannot be inputed
-            //ensure that Chars are converter to uppercase Modelbinding input object perhaps
-            var letter = letterDto.Letter;
+            var letter = letterDto.Character;
             var letters = GetListOfPreceedingCharacters(letter);
             var diamondArray = GenerateDiamond(letters);
 
@@ -35,7 +32,7 @@ namespace Richards_DiamondKata_ForNewDay
             {
                 for (int j = 0; j < diamond.GetLength(1); j++)
                 {
-                    Console.Write(diamond[i, j] + "\t");
+                    Console.Write(diamond[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -55,7 +52,7 @@ namespace Richards_DiamondKata_ForNewDay
             
             for (int i = 0; i < letters.Count; i++) 
             {              
-                var letterToPlace = letters[letters.Count - i-1];
+                var letterToPlace = letters[i];
 
                 diamond[i, midPoint + i] = letterToPlace;
                 diamond[i, midPoint - i] = letterToPlace;
@@ -69,7 +66,7 @@ namespace Richards_DiamondKata_ForNewDay
 
     internal interface IDiamondKataService 
     {
-        char[,] GetDiamond(LetterDTO letterDto);
+        char[,] GetDiamond(Letter letterDto);
         void PrintDiamond(char[,] diamond); 
     }
 }
