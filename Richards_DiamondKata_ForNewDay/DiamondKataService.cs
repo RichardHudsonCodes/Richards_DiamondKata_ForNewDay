@@ -32,7 +32,7 @@ namespace Richards_DiamondKata_ForNewDay
             {
                 for (int j = 0; j < diamond.GetLength(1); j++)
                 {
-                    Console.Write(diamond[i, j]);
+                    Console.Write(diamond[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
