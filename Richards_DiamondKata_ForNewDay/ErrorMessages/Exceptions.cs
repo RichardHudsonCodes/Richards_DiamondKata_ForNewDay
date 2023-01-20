@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Richards_DiamondKata_ForNewDay.ErrorMessages
+﻿namespace Richards_DiamondKata_ForNewDay.ErrorMessages
 {
     internal class InvalidCharacterException : Exception
     {

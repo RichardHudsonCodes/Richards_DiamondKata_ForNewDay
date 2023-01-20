@@ -1,12 +1,6 @@
 ﻿using FluentAssertions;
 using Richards_DiamondKata_ForNewDay.DTOs;
 using Richards_DiamondKata_ForNewDay.ErrorMessages;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiamondKata.Test
 {

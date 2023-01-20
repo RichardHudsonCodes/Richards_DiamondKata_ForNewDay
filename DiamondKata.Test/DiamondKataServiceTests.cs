@@ -1,9 +1,6 @@
 using FluentAssertions;
-using Moq;
 using Richards_DiamondKata_ForNewDay;
 using Richards_DiamondKata_ForNewDay.DTOs;
-using Richards_DiamondKata_ForNewDay.ErrorMessages;
-using System.Diagnostics.Metrics;
 
 namespace DiamondKata.Test
 {
