@@ -3,7 +3,8 @@ using Richards_DiamondKata_ForNewDay;
 using Richards_DiamondKata_ForNewDay.DTOs;
 
 Start:
-Console.WriteLine("Input letter then press Enter:");
+var initialText = "Input letter then press Enter:";
+Console.WriteLine(initialText);
 
 try
 {

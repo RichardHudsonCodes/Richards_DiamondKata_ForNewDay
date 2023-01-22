@@ -2,7 +2,7 @@
 {
     internal class InvalidCharacterException : Exception
     {
-        internal InvalidCharacterException(string letter) : base($"You entered an invalid character: {letter}, please enter a letter between A and Z")
+        internal InvalidCharacterException(string? letter) : base($"You entered an invalid character: {letter}, please enter a letter between A and Z")
         {            
         }       
     }
