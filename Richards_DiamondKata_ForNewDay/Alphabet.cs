@@ -1,9 +1,8 @@
 ﻿namespace Richards_DiamondKata_ForNewDay
 {
-    internal class AlphabetService
+    internal class Alphabet : IAlphabet
     {
-
-        public AlphabetService() { }
+        internal Alphabet() { }
 
         internal List<char> GetAlphabet() 
         {
@@ -16,7 +15,7 @@
         }
     }
 
-    internal interface IAlphabetService 
+    internal interface IAlphabet
     {        
         List<char> GetPrecedingLettersInAlphabet(char letter); 
     }

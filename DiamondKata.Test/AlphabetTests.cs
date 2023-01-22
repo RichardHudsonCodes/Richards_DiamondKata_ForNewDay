@@ -3,9 +3,9 @@ using Richards_DiamondKata_ForNewDay;
 
 namespace DiamondKata.Test
 {
-    public class AlphabetServiceTest
+    public class AlphabetTests
     {
-        private AlphabetService _alphabetService = new AlphabetService();   
+        private Alphabet _alphabetService = new Alphabet();   
 
         [Fact]
         public void GetAlphaBet_Positive_ReturnsFullCapitalisedAlphabet() 

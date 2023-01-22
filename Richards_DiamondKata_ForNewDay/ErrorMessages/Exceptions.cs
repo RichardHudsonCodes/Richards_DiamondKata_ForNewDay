@@ -13,4 +13,11 @@
         {
         }
     }
+
+    internal class DiamondDimensionsException : Exception
+    {
+        internal DiamondDimensionsException() : base("Cannont generate a diamond from a list/array with a count of less than 1")
+        {
+        }
+    }
 }
